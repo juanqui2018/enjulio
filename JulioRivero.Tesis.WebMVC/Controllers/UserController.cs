@@ -105,7 +105,6 @@ namespace JulioRivero.Tesis.WebMVC.Controllers
                 return View(model);
             }
         }
-        //
         public ActionResult CreateLogin(UserViewModel model)
         {
             return View();

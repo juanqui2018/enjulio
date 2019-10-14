@@ -21,7 +21,7 @@ namespace JulioRivero.Tesis.WebMVC.Controllers
         {
             //aqui se puede mostrar el total de visitas de todos los impairments
             ViewBag.LastNameUser = lastName;
-            
+
             var imparirments = Mapper.Map<IList<Impairment>, IList<ImpairmentViewModel>>(ImpairmentManager.GetAllImpairments()).ToList();
             ViewBag.TotalImpairment = imparirments.Sum(item => item.VisitCount);
             return View(imparirments);

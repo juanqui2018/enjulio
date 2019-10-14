@@ -7,10 +7,10 @@
 }
 <h2 class="text-center">Bienvenido al sistema "@ViewBag.LastNameUser"</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Deficiency", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Crear nueva deficiencia</h4>
         <hr />
@@ -53,15 +53,25 @@
                 @Html.ValidationMessageFor(model => model.Prevention, "", new { @class = "text-danger" })
             </div>
         </div>
-        
-        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FileImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="fileImg" />
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-default" />
             </div>
         </div>
     </div>
+}
+
+@if (ViewBag.UploadSuccess == true)
+{
+    <span>Se subió la imagen exitosamente!!</span>
 }
 
 <div class="col-md-offset-2 col-md-10">

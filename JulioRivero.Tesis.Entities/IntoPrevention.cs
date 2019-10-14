@@ -14,5 +14,6 @@ namespace JulioRivero.Tesis.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public string Prevention { get; set; }
+        public string FileImage { get; set; }
     }
 }

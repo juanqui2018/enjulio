@@ -46,13 +46,23 @@
             @Html.DisplayFor(model => model.Prevention)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.FileImage)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.FileImage)" alt="IMAGES" height="250" width="450" />
+        </dd>
+        
     </dl>
+
+
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> 
         </div>
     }
 </div>

@@ -64,7 +64,7 @@ namespace JulioRivero.Tesis.EFContext
                     deficiencyUpdate.Introduction = deficiency.Introduction;
                     deficiencyUpdate.Symptom = deficiency.Symptom;
                     deficiencyUpdate.Prevention = deficiency.Prevention;
-                    
+                    deficiencyUpdate.FileImage = deficiency.FileImage;
                 }
                 context.SaveChanges();
             }

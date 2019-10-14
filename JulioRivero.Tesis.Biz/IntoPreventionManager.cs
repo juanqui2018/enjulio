@@ -46,6 +46,7 @@ namespace JulioRivero.Tesis.Biz
         public List<IntoPrevention> GetAllIntoPreventions()
         {
             var intoPreventions = _intoPreventionDao.GetAll().ToList();
+
             //controlar estados 
             return intoPreventions;
         }

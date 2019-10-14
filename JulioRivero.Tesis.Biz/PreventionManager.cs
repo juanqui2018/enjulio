@@ -46,6 +46,16 @@ namespace JulioRivero.Tesis.Biz
         public List<Prevention> GetAllPreventions()
         {
             var preventions = _preventionDao.GetAll().ToList();
+            string describ;
+            int start = 0, sizeString = 100;
+            foreach (var item in preventions)
+            {
+                if (item.Description.Length > sizeString)
+                {
+                    describ = item.Description.Substring(start, sizeString);
+                    item.Description = string.Format(describ + "...");
+                }
+            }
             //controlar estados 
             return preventions;
         }

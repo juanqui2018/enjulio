@@ -46,6 +46,7 @@ namespace JulioRivero.Tesis.Biz
         public List<Deficiency> GetAllDeficiencys()
         {                         
             var deficiencys = _deficiencyDao.GetAll().ToList();
+
             //controlar estados 
             return deficiencys;
         }

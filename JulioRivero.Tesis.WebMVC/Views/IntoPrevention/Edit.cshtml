@@ -7,7 +7,7 @@
 }
 <h2 class="text-center">Bienvenido al sistema "@ViewBag.LastNameUser"</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "IntoPrevention", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -50,8 +50,22 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.FileImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                <center> <img src="@Url.Content(Model.FileImage)" alt="IMAGES" height="250" width="450" /> </center>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FileImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="fileImg" />
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-default" />
             </div>
         </div>
     </div>

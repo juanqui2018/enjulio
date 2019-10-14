@@ -46,6 +46,16 @@ namespace JulioRivero.Tesis.Biz
         public List<Impairment> GetAllImpairments()
         {
             var impairments = _impairmentDao.GetAll().ToList();
+            string describ;
+            int start = 0, sizeString = 100;
+            foreach (var item in impairments)
+            {
+                if (item.Description.Length > sizeString)
+                {
+                    describ = item.Description.Substring(start, sizeString);
+                    item.Description = string.Format(describ + "...");
+                }
+            }
             //controlar estados 
             return impairments;
         }

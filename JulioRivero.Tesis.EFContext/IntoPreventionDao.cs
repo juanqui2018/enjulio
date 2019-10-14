@@ -61,6 +61,7 @@ namespace JulioRivero.Tesis.EFContext
                     intoPreventionUpdate.Title = intoPrevention.Title;
                     intoPreventionUpdate.Description = intoPrevention.Description;
                     intoPreventionUpdate.Prevention = intoPrevention.Prevention;
+                    intoPreventionUpdate.FileImage = intoPrevention.FileImage;
                 }
                 context.SaveChanges();
             }

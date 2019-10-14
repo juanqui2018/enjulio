@@ -12,6 +12,7 @@ namespace JulioRivero.Tesis.WebMVC.Models
         public int PreventionId { get; set; }
         [Display(Name = "Tipo")]
         public string Kind { get; set; }
+        [Required]
         [Display(Name = "Titulo")]
         public string Title { get; set; }
         [DataType(DataType.MultilineText)]
@@ -20,5 +21,7 @@ namespace JulioRivero.Tesis.WebMVC.Models
         [DataType(DataType.MultilineText)]
         [Display(Name = "Prevención")]
         public string Prevention { get; set; }
+        [Display(Name = "Imagen")]
+        public string FileImage { get; set; }
     }
 }
